@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ page import="java.util.*,com.techno.dao.StudentDao,com.techno.entites.Student" %>
+<%@ page
+	import="java.util.*,com.techno.dao.StudentDao,com.techno.entites.Student"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,18 +46,21 @@
 			</thead>
 			<tbody>
 				<%
-					List<Student> students=StudentDao.getAllStudents();
-				
-				for(Student st:students){
+					List<Student> students = StudentDao.getAllStudents();
+
+					for (Student st : students) {
 				%>
 				<tr>
-					<td><%=st.getName() %></td>
+					<td><%=st.getName()%></td>
 					<td><%=st.getMarks()%></td>
-					<th><a href="updateStudent.jsp?id="><button
+					<th><a href="updateStudent.jsp?id=<%=st.getId()%>"><button
 								class="btn btn-primary">update</button></a></th>
-					<th><a href="delete?id="><button class="btn btn-danger">delete</button></a></th>
+					<th><a href="delete?id=<%=st.getId()%>"><button
+								class="btn btn-danger">delete</button></a></th>
 				</tr>
-<% }%>
+				<%
+					}
+				%>
 
 			</tbody>
 		</table>
