@@ -13,4 +13,4 @@
 		<property name="show_sql">true</property>
 		<mapping class="com.techno.entites.Student"></mapping>
 	</session-factory>
-</hibernate-configuration>  
+</hibernate-configuration>
